@@ -8,9 +8,51 @@ class Reto5
   def initialize name
   	self.name= name
   	@questions_array = charge_questions "questions.txt"
-    print_questions
+    @score = 0
+    #print_questions #only in delopment
   end
+
+  def start_game
+    Reto5::show_banner_are_you_ready
+    p "ans: "
+    ans = gets.chomp
+    if ans == 'Y' || ans == 'y'
+      @score = 0
+      play_reto5
+    elsif ans == 'N' || ans == 'n'
+      end_game
+    else
+      raise NotValidAnswer.new "Answer isn't correct"
+    end
+  end
+
   private
+
+  def play_reto5
+    @questions_array.shuffle!
+    @questions_array.each_with_index do |question,index|
+      points = 0;
+      3.downto(1) do |attempt|
+        puts "#{index+1}.Definition: #{question[:definition]} (Attempt:#{attempt})"
+        puts "Ans:"
+        ans = gets.chomp
+        if ans == question[:answer] 
+          points = 50 * attempt;
+          break
+        elsif attempt == 1
+          puts "#{index+1}.Definition: #{question[:definition]} Answer: #{question[:answer]}"
+        end
+      end
+      puts "You win: #{points} points"
+      @score += points
+      puts "Score: #{@score} points"
+    end
+  end
+
+  def end_game
+    puts "Provicional msn of end"
+  end
+
   def charge_questions file_name
   	if File.file?(file_name)	&& !File.zero?(file_name)			# code if file exists and file isn't empty
       questions_array = []  # create one array to store each question extracted from file
@@ -45,8 +87,13 @@ class Reto5
   def self.show_banner_welcome 
   	puts "*" * 50 + "\n" + "*" * 16 + " WELCOME TO RETO5 " +  "*" * 16 + "\n" +  "*" * 50
   end
+
   def self.show_banner_ask_name 
   	puts "*" * 50 + "\n" + "*" * 13 + " PLEASE INPUT YOUR NAME " +  "*" * 13 + "\n" +  "*" * 50
+  end
+
+  def self.show_banner_are_you_ready 
+    puts "*" * 50 + "\n" + "*" * 10  + " are you ready to reto5?(Y/N) " + "*" * 10 + "\n" +  "*" * 50
   end
 end
 

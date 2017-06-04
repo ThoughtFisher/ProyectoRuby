@@ -2,6 +2,7 @@ load "reto5.rb"
 
 #Show initial banner of Reto5
 Reto5::show_banner_welcome
+reto5 = nil;
 loop do
 	begin 										# something which might raise an exception
   	Reto5::show_banner_ask_name
@@ -21,5 +22,17 @@ loop do
 		break;
 	end
 end
+
+#start game
+loop do
+  begin
+    reto5.start_game  
+  rescue NotValidAnswer => e
+    puts "Error: #{e}"
+  else
+    break;
+  end
+end
+
 
 

@@ -6,3 +6,6 @@ end
 
 class QuestionsFileNoExistOrIsEmpty < StandardError
 end
+
+class NotValidAnswer < StandardError
+end
