@@ -1,10 +1,10 @@
-definicion 1;respuesta1
-definicion 2;respuesta2
-definicion 3;respuesta3
-definicion 4;respuesta4
-definicion 5;respuesta5
-definicion 6;respuesta6
-definicion 7;respuesta7
-definicion 8;respuesta8
-definicion 9;respuesta9
-definicion 10;respuesta10
+Es un lenguaje de programación orientado, para todo uso, dinámico y reflectivo;ruby
+Asynchronous JavaScript And XML;ajax
+American National Standards Institute;ansi
+Application Programming Interface;api
+Símbolo gráfico el cual normalmente representa una cara feliz, triste, etc;emoji
+Es un lenguaje para crear documentos de hypertexto para uso en el www o intranets;html
+Creado por Netscape Communications Corporation para designar documentos que llegan desde un servidor web seguro;https
+Servidor de Nombres de Dominio;dns
+es un pequeño pedazo de data enviado desde un servidor web al navegador del cliente (i.e. Internet Explorer, Firefox, Chrome y Safari) que se guarda localmente en la máquina del usuario;cookie
+Persona que trata de introducirse a un sistema sin autorización y con la intención de realizar algún tipo de daño u obtener un beneficio;hacker
